@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tasks</title>
+</head>
+<body>
+  <% if @tasks.length == 0 %>
+    <h3>You have no tasks yet</h3>
+    <%=	 link_to "Create a task",  %>
+  <%	else  %>
+    <% @tasks.each do |t| %>
+      <p><%=t.name%></p>
+    <% end %>
+  <%	end  %>
+</body>
+</html>
