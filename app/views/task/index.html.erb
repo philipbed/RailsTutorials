@@ -9,8 +9,8 @@
     <h3>You have no tasks yet</h3>
     <%=	 link_to "Create a task", newTask_path %>
   <%	else  %>
-    <% @tasks.each do |t| %>
-      <p><%=t.name%></p>
+    <% @tasks.each_with_index do |task,idx| %>
+      <p><%= link_to "Task #{idx+1}",task_path(task)%></p>
     <% end %>
   <%	end  %>
 </body>
