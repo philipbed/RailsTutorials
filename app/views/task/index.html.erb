@@ -8,12 +8,15 @@
 
   <% if @tasks.length == 0 %>
     <h3>You have no tasks yet</h3>
-    <%=	 link_to "Create your first task", newTask_path %>
+    <%=	 button_to "Create your first task", newTask_path, method: "get" %>
   <%	else  %>
-    <%=	 link_to "Add a task", newTask_path %>
-    <% @tasks.each_with_index do |task,idx| %>
-      <p><%= link_to "Task #{idx+1}",task_path(task)%></p>
-    <% end %>
+    <%=	 button_to "Add a task", newTask_path, method: "get" %>
+    <ul>
+      <% @tasks.each_with_index do |task,idx| %>
+          <li><%= link_to "Task #{idx+1}",task_path(task)%></li>
+      <% end %>
+    </ul>
+
   <%	end  %>
 </body>
 </html>
