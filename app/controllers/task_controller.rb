@@ -1,11 +1,11 @@
 class TaskController < ApplicationController
 
   def index
-    @tasks = Task.all
+    @tasks = Task.all()
   end
 
   def new
-    @task = Task.new
+    @task = Task.new()
   end
 
   def create
@@ -33,6 +33,16 @@ class TaskController < ApplicationController
       redirect_to(:action => "show", :id => @task.id)
     else
       render "edit"
+    end
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy()
+    if @task.destroyed?
+      redirect_to(:action => "index")
+    else
+      render "show"
     end
   end
 
