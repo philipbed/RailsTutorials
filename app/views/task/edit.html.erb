@@ -3,5 +3,6 @@
       <%= form.label :task %><br>
       <%= form.text_field :name, :value => @task.name %><br>
       <%= form.submit "Update Task" %>
+      <button><%= link_to "Cancel", task_path(@task) %></button>
     </div>
 <%	end  %>
