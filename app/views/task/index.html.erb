@@ -7,7 +7,7 @@
 <body>
   <% if @tasks.length == 0 %>
     <h3>You have no tasks yet</h3>
-    <%=	 link_to "Create a task",  %>
+    <%=	 link_to "Create a task", newTask_path %>
   <%	else  %>
     <% @tasks.each do |t| %>
       <p><%=t.name%></p>
