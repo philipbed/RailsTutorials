@@ -1,9 +1,11 @@
 <%=	form_for(@task) do |form| %>
+
   <div>
     <%= form.label :task %><br>
     <%= form.text_field :name  %><br>
     <%= form.submit "Create Task" %>
-    <button><%=	link_to "Cancel", action: "index" %></button>
+
   </div>
 
-<%	end  %>
+<% end %>
+<%=	button_to "Cancel", {controller: "task", action: "index"}, method: :get %>
