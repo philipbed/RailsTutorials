@@ -5,7 +5,7 @@
   <title>Tasks</title>
 </head>
 <body>
-
+  <%= render "shared/navbar" %>
   <% if @tasks.length == 0 %>
     <h3>You have no tasks yet</h3>
     <%=	 button_to "Create your first task", newTask_path, method: "get" %>
