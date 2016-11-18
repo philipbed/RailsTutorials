@@ -1,0 +1,9 @@
+<%=	 form_for(@task,html: {method:"PATCH"}) do |form| %>
+    <div>
+      <%= form.label :task %><br>
+      <%= form.text_field :name, :value => @task.name %><br>
+      <%= form.submit "Update Task" %>
+
+    </div>
+<%	end  %>
+<%= button_to "Cancel", task_path(@task), method: "get" %>
