@@ -1,2 +1,2 @@
-# TodoApp
-Simple To-Do list application
+# RailsTutorials
+Tutorials to help me learn RoR
