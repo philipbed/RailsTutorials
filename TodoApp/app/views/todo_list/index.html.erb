@@ -1,0 +1,20 @@
+<%= render "shared/navbar" %>
+<div class="mui-row">
+  <div class="mui-col-sm-6 mui-col-sm-offset-3">
+    <div class="mui-panel">
+      <div class="mui-row">
+        <h2 class="mui-col-sm-8">You have <%= @lists.length %> lists</h2>
+        <%=	button_to "+", {controller: "task", action: "index", method: :get},{class:"mui-btn mui-btn--primary mui-btn--fab mui-col-sm-offset-3"}%>
+        <!--<button class="mui-btn mui-btn&#45;&#45;primary mui-btn&#45;&#45;fab mui-col-sm-offset-3">+</button>-->
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<ul>
+  <% @lists.each_with_index do |list,idx| %>
+      <li><%= link_to "Task #{idx+1}",task_path(list)%></li>
+  <% end %>
+</ul>
