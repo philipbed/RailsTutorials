@@ -6,6 +6,7 @@ class TodoListController < ApplicationController
 
   def create
     @list = TodoList.create(list_params)
+    @lists = TodoList.all()
   end
 
   def show
