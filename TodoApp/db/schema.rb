@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20161021233436) do
   end
 
   create_table "todo_lists", force: :cascade do |t|
+    t.text     "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

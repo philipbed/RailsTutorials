@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  # get "/",:to => "/index"
+
+  # todolist routes
+  # resources :posts
   root to: "todo_list#index"
+
+  post "/lists" => "todo_list#create"
+  get "/lists/:id" => "todo_list#show", as: :list
+
+  # task routes
   get "/tasks" => "task#index"
   post "/tasks" => "task#create"
   get "/tasks/new" => "task#new" , as: :newTask
@@ -11,5 +18,7 @@ Rails.application.routes.draw do
   get "/tasks/:id/edit" => "task#edit"
 
   delete "/tasks/:id" => "task#destroy"
+
+
 
 end
