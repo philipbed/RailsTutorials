@@ -1,12 +1,19 @@
 class TodoListController < ApplicationController
   def index
     @lists = TodoList.all()
+  end
+
+  def new
     @list = TodoList.new
   end
 
   def create
-    @list = TodoList.create(list_params)
-    @lists = TodoList.all()
+    @list = TodoList.new(list_params)
+    if @list.save
+      redirect_to "/"
+    else
+      render "new"
+    end
   end
 
   def show
@@ -15,7 +22,7 @@ class TodoListController < ApplicationController
 
   private
   def list_params
-    params.permit(:name)
+    params.require(:todo_list).permit(:name)
   end
 
 end

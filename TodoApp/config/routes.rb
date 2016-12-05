@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # resources :posts
   root to: "todo_list#index"
 
+  get "/lists/new" => "todo_list#new", as: :newList
   post "/lists" => "todo_list#create"
   get "/lists/:id" => "todo_list#show", as: :list
 

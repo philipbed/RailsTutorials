@@ -1,33 +1,15 @@
-<% content_for :stylesheets do %>
-    <style type="text/css">
-      .hide{
-        display: none;
-      }
 
-      #cancel {
-        float: right;
-      }
-    </style>
-<% end %>
 
 <%= render "shared/navbar" %>
 <div class="mui-row">
   <div class="mui-col-sm-6 mui-col-sm-offset-3">
     <div class="space"></div>
-    <%= form_for(TodoList.new, :url=>{:action => "create", controller: :todo_list}, remote: true, :html => {:class => "hide mui-row addList"} ) do %>
-        <legend>Create a new Todo List</legend>
-        <div class="mui-textfield">
-          <input type="text" name="name" placeholder="List name">
-        </div>
-        <button type="submit" class="mui-btn mui-btn--raised mui-btn--primary" id="createList">Submit</button>
-        <button type="button" class="mui-btn mui-btn--raised mui-btn--danger" id="cancel">Cancel</button>
-        <div class="space"></div>
-    <%end %>
     <div class="space"></div>
     <div class="mui-panel">
       <div class="mui-row">
         <h2 class="mui-col-sm-8">You have <%= @lists.length %> lists</h2>
-        <button class="mui-btn mui-btn--primary mui-btn--fab mui-col-sm-offset-3" id="showForm">+</button>
+        <%= link_to "+", newList_path, {class: "mui-btn mui-btn--primary mui-btn--fab mui-col-sm-offset-3"} %>
+        <!--<button class="mui-btn mui-btn&#45;&#45;primary mui-btn&#45;&#45;fab mui-col-sm-offset-3">+</button>-->
         <!--<button class="mui-btn mui-btn&#45;&#45;primary mui-btn&#45;&#45;fab mui-col-sm-offset-3">+</button>-->
       </div>
 
@@ -42,32 +24,4 @@
   <% end %>
 </ul>
 
-<script type="text/javascript">
 
-  function toggleForm(){
-    $(".hide").toggle("slow");
-  }
-
-  $(document).ready(function(){
-    $("#showForm").click(function(){
-      toggleForm();
-    });
-
-    $("#cancel").click(function(){
-      toggleForm();
-    });
-
-//    $(".addList").submit(function(event){
-//      event.preventDefault();
-//      var name  = $('input[name=name]').val();
-//      toggleForm();
-//      $.ajax({
-//        type:"POST",
-//        url: "/lists",
-//        data: {name:name},
-//        headers: {"Access-Control-Allow-Origin":"localhost:3000"},
-//      });
-//      return false;
-//    });
-  });
-</script>
