@@ -17,3 +17,7 @@
 .space {
     height: 25px;
 }
+
+body#grey{
+    background-color: grey;
+}
