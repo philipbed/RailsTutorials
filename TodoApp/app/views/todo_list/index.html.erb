@@ -1,20 +1,9 @@
-<% content_for :stylesheets do %>
-    <style type="text/css">
-
-      .mui-row.mui-panel.task{
-        margin-bottom: 2px;
-      }
-
-
-    </style>
-<% end %>
-
 <%= render "shared/navbar" %>
 <div class="mui-row">
   <div class="mui-col-sm-6 mui-col-sm-offset-3">
     <div class="space"></div>
     <div class="space"></div>
-    <div class="mui-panel">
+    <div class="mui-panel" id="outer-panel">
       <div class="mui-row">
         <h2 class="mui-col-sm-8">You have <%= @lists.length %> lists</h2>
         <%= link_to "+", newList_path, {class: "mui-btn mui-btn--primary mui-btn--fab mui-col-sm-offset-3"} %>
@@ -25,7 +14,6 @@
       <% @lists.each_with_index do |list,idx| %>
           <div class="mui-row mui-panel task"><%= link_to "Task #{idx+1}",task_path(list)%></div>
       <% end %>
-
 
     </div>
   </div>
