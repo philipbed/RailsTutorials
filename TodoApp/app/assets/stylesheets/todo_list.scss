@@ -1,16 +1,16 @@
 // Place all the styles related to the TodoList controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+@import 'colors';
 
 
 div.mui-panel#outer-panel {
-  background-color: #9E9E9E;
+  background-color: $containerColor;
   margin-bottom: 0;
 }
 
 .mui-row.mui-panel.task {
-  background-color: #BDBDBD;
+  background-color: $innerContainerColor;
   margin: 0 10px 10px;
 
 }
@@ -20,7 +20,7 @@ div.mui-panel {
 }
 
 div.tasks {
-  background-color: #9E9E9E;
+  background-color: $containerColor;
 }
 
 .float {
@@ -28,5 +28,9 @@ div.tasks {
 }
 
 a.action-helpers{
-  color: #64B5F6;
+  color: $innerContainerAccent;
+}
+
+div.container {
+  background-color: $containerColor;
 }

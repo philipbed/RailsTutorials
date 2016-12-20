@@ -22,7 +22,7 @@
 <div class="space"></div>
 <div class="space"></div>
 <div class="mui-row">
-  <div class="mui-container mui-col-xs-offset-1 mui-col-md-offset-2">
+  <div class="mui-panel container mui-col-xs-offset-1 mui-col-md-8 mui-col-md-offset-2">
     <%= form_for(@list, :url=>{:action => "create", controller: :todo_list}, remote: true, :html => {:class => "mui--text-center mui-form--inline addList"} ) do %>
         <legend class="">Create a new Todo List</legend>
         <div class="mui-textfield mui-col-md-5 mui-col-xs-4">
@@ -34,23 +34,3 @@
   </div>
 
 </div>
-
-<script type="text/javascript">
-
-  $(document).ready(function(){
-
-
-//    $(".addList").submit(function(event){
-//      event.preventDefault();
-//      var name  = $('input[name=name]').val();
-//      toggleForm();
-//      $.ajax({
-//        type:"POST",
-//        url: "/lists",
-//        data: {name:name},
-//        headers: {"Access-Control-Allow-Origin":"localhost:3000"},
-//      });
-//      return false;
-//    });
-  });
-</script>

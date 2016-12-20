@@ -1,0 +1,31 @@
+<%= render "shared/navbar" %>
+<div class="mui-row">
+  <div class="mui-col-xs-8 mui-col-xs-offset-2 mui-col-sm-6 mui-col-sm-offset-3">
+    <div class="space"></div>
+    <div class="space"></div>
+    <div class="mui-panel mui--z5" id="outer-panel">
+      <div class="mui-row">
+        <h2 class="mui-col-xs-14 mui-col-sm-8"><%=	@list.name.capitalize  %> has <%= @list.tasks.length %> tasks</h2>
+        <%= link_to "+", newTask_path(@list.id), {class: "mui-btn mui-btn--primary mui-btn--fab mui-col-xs-offset-0 mui-col-sm-offset-3"} %>
+      </div>
+
+      <% @list.tasks.each_with_index do |task,idx| %>
+
+          <div class="mui-row mui-panel task mui--z3">
+            <%#= link_to "Task #{idx+1}",task_path(list)%>
+            <span><%=task.name%></span>
+            <span class="float">
+              <a href="<%=editTask_path(@list.id,task.id)%>" class="action-helpers">
+                <i class="material-icons">border_color</i>
+              </a>
+              <a href="<%=deleteTask_path(@list.id,task.id)%>" data-method="delete" class="action-helpers">
+                <i class="material-icons">remove_circle</i>
+              </a>
+              </span>
+          </div>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

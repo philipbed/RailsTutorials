@@ -1,3 +1,5 @@
+@import 'colors';
+
 div.mui-appbar {
   background-color: black;
 }
@@ -8,5 +10,5 @@ a.mui-btn.mui-btn--flat {
 
 
 a.mui-btn.mui-btn--flat:hover {
-  background: #49A9F5 ;
+  background: $primaryAccentColor;
 }

@@ -1,11 +1,36 @@
-<%=	form_for(@task) do |form| %>
+<% content_for :stylesheets do %>
+    <style type="text/css">
 
-  <div>
-    <%= form.label :task %><br>
-    <%= form.text_field :name  %><br>
-    <%= form.submit "Create Task" %>
+      #cancel {
+        /*float: right;*/
+      }
 
+      div.mui-textfield{
+        margin-left: 300px;
+      }
+
+      @media (max-width: 750px) {
+        div.mui-textfield {
+          margin-left: 100px;
+        }
+      }
+
+
+    </style>
+<% end %>
+<%= render "shared/navbar" %>
+<div class="space"></div>
+<div class="space"></div>
+<div class="mui-row">
+  <div class="mui-panel container mui-col-xs-offset-1 mui-col-md-8 mui-col-md-offset-2">
+    <%= form_for(@task, :url=>{:action => "create", controller: :task}, remote: true, :html => {:class => "mui--text-center mui-form--inline addList"} ) do %>
+        <legend class="">Create a new task for <%= @name %></legend>
+        <div class="mui-textfield mui-col-md-5 mui-col-xs-4">
+          <input type="text" name="task[name]" placeholder="List name">
+        </div>
+        <button type="submit" class="mui-btn mui-btn--raised mui-btn--primary" id="createList">Submit</button>
+        <%= link_to "Cancel", {action:"show", controller: "todo_list", id:params[:todo_list_id]} ,{class:"mui-btn mui-btn--raised mui-btn--danger" ,id:"cancel"}  %>
+    <%end %>
   </div>
 
-<% end %>
-<%=	button_to "Cancel", {controller: "task", action: "index"}, method: :get %>
+</div>

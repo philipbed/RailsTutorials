@@ -17,7 +17,7 @@ class TodoListController < ApplicationController
   end
 
   def show
-    @task = TodoList.find(params[:id])
+    @list = TodoList.find(params[:id])
   end
 
   private

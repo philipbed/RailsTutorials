@@ -14,10 +14,10 @@ ActiveRecord::Schema.define(version: 20161021233436) do
 
   create_table "tasks", force: :cascade do |t|
     t.text     "name"
-    t.integer  "todoList_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["todoList_id"], name: "index_tasks_on_todoList_id"
+    t.integer  "todo_list_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["todo_list_id"], name: "index_tasks_on_todo_list_id"
   end
 
   create_table "todo_lists", force: :cascade do |t|
