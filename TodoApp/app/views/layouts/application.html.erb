@@ -10,6 +10,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= yield :stylesheets %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="//cdn.muicss.com/mui-0.9.4/css/mui.min.css" rel="stylesheet" type="text/css" />
   <%# yield :stylesheets %>
   <script src="//cdn.muicss.com/mui-0.9.4/js/mui.min.js"></script>
@@ -17,7 +18,7 @@
   <%= yield :scripts %>
 </head>
 
-<body>
+<body id="grey">
 <%= yield %>
 </body>
 </html>

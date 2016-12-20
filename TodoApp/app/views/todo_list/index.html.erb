@@ -1,20 +1,39 @@
 <%= render "shared/navbar" %>
 <div class="mui-row">
-  <div class="mui-col-sm-6 mui-col-sm-offset-3">
+  <div class="mui-col-xs-8 mui-col-xs-offset-2 mui-col-sm-6 mui-col-sm-offset-3">
     <div class="space"></div>
     <div class="space"></div>
-    <div class="mui-panel" id="outer-panel">
+    <div class="mui-panel mui--z5" id="outer-panel">
       <div class="mui-row">
-        <h2 class="mui-col-sm-8">You have <%= @lists.length %> lists</h2>
-        <%= link_to "+", newList_path, {class: "mui-btn mui-btn--primary mui-btn--fab mui-col-sm-offset-3"} %>
+        <h2 class="mui-col-xs-14 mui-col-sm-8">You have <%= @lists.length %> lists</h2>
+        <%= link_to "+", newList_path, {class: "mui-btn mui-btn--primary mui-btn--fab mui-col-xs-offset-0 mui-col-sm-offset-3"} %>
         <!--<button class="mui-btn mui-btn&#45;&#45;primary mui-btn&#45;&#45;fab mui-col-sm-offset-3">+</button>-->
         <!--<button class="mui-btn mui-btn&#45;&#45;primary mui-btn&#45;&#45;fab mui-col-sm-offset-3">+</button>-->
       </div>
 
-      <% @lists.each_with_index do |list,idx| %>
-          <div class="mui-row mui-panel task"><%= link_to "Task #{idx+1}",task_path(list)%></div>
-      <% end %>
 
+      <!--<div class="mui-panel tasks">-->
+
+        <% @lists.each_with_index do |list,idx| %>
+            <div class="mui-row mui-panel task mui--z3">
+              <%#= link_to "Task #{idx+1}",task_path(list)%>
+              <span><%=list.name%></span>
+              <span class="float">
+              <a href="#" class="action-helpers">
+                <i class="material-icons">border_color</i>
+              </a>
+              <a href="#" class="action-helpers">
+                <i class="material-icons">remove_circle</i>
+              </a>
+              <a href="<%= newTask_path %>" class="action-helpers">
+                <i class="material-icons">add_box</i>
+              </a>
+              </span>
+              <%#= link_to "+", {class: "mui-btn mui-btn--primary mui-btn--fab mui-col-sm-offset-3"} %>
+            </div>
+        <% end %>
+
+      <!--</div>-->
     </div>
   </div>
 </div>

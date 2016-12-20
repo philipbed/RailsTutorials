@@ -3,10 +3,30 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
 div.mui-panel#outer-panel {
-  background-color: lightgrey;
+  background-color: #9E9E9E;
+  margin-bottom: 0;
 }
 
-.mui-row.mui-panel.task{
-  margin-bottom: 0;
+.mui-row.mui-panel.task {
+  background-color: #BDBDBD;
+  margin: 0 10px 10px;
+
+}
+
+div.mui-panel {
+  //margin-bottom: 0;
+}
+
+div.tasks {
+  background-color: #9E9E9E;
+}
+
+.float {
+  float: right;
+}
+
+a.action-helpers{
+  color: #64B5F6;
 }
