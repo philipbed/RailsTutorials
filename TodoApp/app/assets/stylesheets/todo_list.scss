@@ -34,3 +34,15 @@ a.action-helpers{
 div.container {
   background-color: $containerColor;
 }
+
+a.mui-btn.light{
+  background-color: $innerContainerAccent;
+  color: #757575;
+  font-size: 18px;
+  padding-left: 6px;
+}
+
+a.light i.material-icons {
+  font-size: 18px;
+  margin-right: 10px;
+}

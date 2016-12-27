@@ -20,6 +20,11 @@ class TodoListController < ApplicationController
     @list = TodoList.find(params[:id])
   end
 
+  def edit
+    @list = TodoList.find(params[:id])
+
+  end
+
   private
   def list_params
     params.require(:todo_list).permit(:name)

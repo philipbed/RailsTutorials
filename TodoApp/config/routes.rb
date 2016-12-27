@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "/lists/new" => "todo_list#new", as: :newList
   post "/lists" => "todo_list#create"
   get "/lists/:id" => "todo_list#show", as: :list
-
+  get "/lists/:id/edit" => "todo_list#edit" , as: :editList
   # task routes
   get "lists/:todo_list_id/tasks" => "task#index"
   post "lists/:todo_list_id/tasks" => "task#create"
