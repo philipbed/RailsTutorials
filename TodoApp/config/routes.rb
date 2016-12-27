@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :tasks
   end
   root to: "todo_list#index"
+  get "/tasks" => "task#index"
+  post "/tasks" => "task#create"
+  get "/tasks/new" => "task#new" , as: :newTask
 
   get "/lists/new" => "todo_list#new", as: :newList
   post "/lists" => "todo_list#create"
